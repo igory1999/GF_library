@@ -4,7 +4,7 @@
 
 namespace GaussianFilter
 {
-  typedef Kokkos::View<double***>  ViewMatrixType;
+  typedef Kokkos::View<double***, Kokkos::LayoutLeft, Kokkos::Cuda>  ViewMatrixType;
   typedef Kokkos::View<const double***, Kokkos::MemoryTraits<Kokkos::RandomAccess>> ViewMatrixConstType;
 
   void generate_gaussian(double sigma, ViewMatrixType g);
